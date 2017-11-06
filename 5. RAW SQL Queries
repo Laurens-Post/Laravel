@@ -1,0 +1,41 @@
+*** Inserting Data ***
+
+// in routes.php
+Route::get('/insert', function() {
+
+	DB::insert('insert into naam(titel) values(?)', ['test']');
+	
+});
+
+*** Reading Data ***
+
+// in routes.php
+Route::get('/read', function() {
+
+	$results = DB::select('select * from tabelnaam where id = ?', [1]);
+	
+	foreach($results as $result) {
+
+	return $result->naam;
+
+	}
+});
+
+
+*** Updating Data ***
+
+Route::get('/update', function() {
+
+	$updated = DB::updat('update tabelnaam set titel = "Update titel" where id = ?', [1]);
+
+	return $updated;
+}
+
+*** Deleting Data ***
+
+Route::get('/delete' function() {
+
+	$deleted = DB::delete('delete from tabelnaam where id = ?', [1]);
+
+	return $deleted;
+});
