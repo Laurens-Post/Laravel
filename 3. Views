@@ -1,0 +1,52 @@
+// in NaamController.php
+
+public function view() {
+
+	return view('view');
+
+}
+
+// Nieuw bestand aanmaken in views map: views.blade.php
+
+// In de views map een extra map 
+public function view() {
+
+	return view('map.view');
+	// of
+	return view('map/view');
+}
+
+
+// In routes.php
+Route::get('link/{id}', 'NaamController@show');
+
+// NaamController bij function show:
+return view('naam')->with('id', $id); // naam.blade.php aanmaken in 'views'
+
+// in naam.blade.php om de ID door te geven:
+{{$id}
+
+// Andere mogelijke manier in NaamController om id door te geven 
+return view('naam', compact('id'));
+
+
+*** Master Layout Setup ***
+// Nieuwe map 'layouts' en nieuw bestand app.blade.php
+
+in app.blade.php
+
+<div class="container">
+
+	@yield('content')
+
+</div>
+
+@yield('footer')
+
+
+// In naam.blade.php en deze uitbreiden met de app.blade om deze in te laden
+@extends('layouts.app')
+
+@section('content')
+	<h1> It Works </h1>
+@stop
