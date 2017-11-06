@@ -1,5 +1,4 @@
 Routes
-
 Controllers
 Views
 Migrations
