@@ -1,0 +1,30 @@
+Controllers zorgen voor de informatie die uit 
+de database wordt gehaald. Daarnaast zorgt de controller dat deze informatie
+bij de view terecht komt of opgehaald wordt.
+
+*** CREATING CONTROLLERS ***
+
+// Waar zijn controllers te vinden
+app/Http/Controllers
+
+// namespace zorgt ervoor dat functies meerdere keren gebruikt kunnen worden
+
+--- php artisan make:controller "NaamController"
+
+// Resource met CRUD methodes
+--- php artisan make:controller --resource "NaamController"
+
+// in routes.php, hoe een controller te gebruiken
+Route::get('/link', 'NaamController@index'); // aangeven welke methode (index)
+
+// ID doorgeven
+Route::get('/link/{id}', 'NaamController@index');
+
+// In de Controller
+public function index($id) {
+	return $id;
+}
+
+
+// Resources gebruiken in routes.php voor CRUD
+Route::resource('link', 'NaamController');
