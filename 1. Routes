@@ -1,0 +1,22 @@
+// Middleware is voor veiligheid
+
+Route::get('/', function () {
+	return view('Welcome");
+});
+
+
+// Nummer in URL door middel van parameter doorgeven
+Route::get('/post/{id}', function($id) {
+
+	return "Number: ". $id;
+});
+
+Route::get('admin/posts/example', array('as'=>'admin.home' ,function() {
+
+	$url = route('admin.home');
+	return "This url is ". $url;
+});
+
+
+// Om de lijst van alle routes op te vragen
+--- php artisan route:list
