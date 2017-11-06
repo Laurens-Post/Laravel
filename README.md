@@ -1,9 +1,9 @@
-Routes
+1. Routes
 
-Controllers
+2. Controllers
 
-Views
+3. Views
 
-Migrations
+4. Migrations
 
-RAW SQL Queries
+5. RAW SQL Queries
