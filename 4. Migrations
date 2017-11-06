@@ -1,0 +1,22 @@
+Database gegevens altijd in .env
+
+// Migratie uitvoeren
+--- php artisan migrate
+
+// Nieuwe migratie aanmaken
+--- php artisan make:migration create_naam_table --create="naam"
+
+// Nieuwe migratie aanmaken + tabel
+--- php artisan make:migration create_naam_table --tabel="naam"
+
+// Laatste migratie terug halen
+--- php artisan migrate:rollback
+
+// Alle migraties terug halen
+--- php artisan migrate:reset
+
+// Alles terug halen en daarna alle migraties uitvoeren
+--- php artisan migrate:refresh
+
+// Migraties checken
+--- php artisan migrate:status
